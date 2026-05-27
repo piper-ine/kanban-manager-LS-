@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@layer components {
+    .wrapper {
+        @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 h-dvh;
+    }
+    .header_prev{
+        @apply text-gray-300 font-normal text-base;
+    }
+}
