@@ -15,7 +15,7 @@ const Column = ({ id, name, color = "BLUE", items }: ColumnProps) => {
     })
 
     return (
-        <section ref={ref} className={`flex min-h-96 w-72 shrink-0 flex-col rounded-lg border bg-zinc-900 p-3 shadow-lg shadow-black/20 transition-opacity ${isDropTarget ? "opacity-60" : "opacity-100"} ${colorClasses[color]}`}>
+        <section ref={ref} className={`flex h-full min-h-0 w-72 shrink-0 flex-col rounded-lg border bg-zinc-900 p-3 shadow-lg shadow-black/20 transition-opacity ${isDropTarget ? "opacity-60" : "opacity-100"} ${colorClasses[color]}`}>
             <header className="mb-3 flex items-center justify-between border-b border-zinc-800 pb-3">
                 <h2 className="truncate text-base font-semibold">{name}</h2>
                 <span className="rounded-md border border-zinc-700 bg-zinc-950 px-2 py-1 text-xs font-semibold text-zinc-300">
@@ -23,12 +23,12 @@ const Column = ({ id, name, color = "BLUE", items }: ColumnProps) => {
                 </span>
             </header>
             {items.length !== 0 ? (
-                <div className="flex flex-1 flex-col gap-2">
+                <div className="flex min-h-0 flex-1 flex-col gap-2 overflow-y-auto">
                     {items.map((item) => (
                         // <div key={item} className="rounded-md border border-zinc-700 bg-zinc-950 p-3 text-sm text-zinc-100">
                         //     {item}
                         // </div>
-                        <Item key={item.text} text={item.text} id={item.id} columnId={item.columnId} />
+                        <Item key={item.id} text={item.text} id={item.id} columnId={item.columnId} />
                     ))}
                 </div>
             ) : <h1>

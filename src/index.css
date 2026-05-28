@@ -2,7 +2,7 @@
 
 @layer components {
     .wrapper {
-        @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 h-dvh;
+        @apply mx-auto flex h-dvh w-full max-w-7xl flex-col overflow-hidden px-4 sm:px-6 lg:px-8;
     }
     .header_prev{
         @apply text-gray-300 font-normal text-base;
